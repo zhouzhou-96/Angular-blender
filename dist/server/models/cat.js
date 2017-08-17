@@ -7,4 +7,4 @@ var carSchema = new mongoose.Schema({
 });
 var Car = mongoose.model('Car', carSchema);
 exports.default = Car;
-//# sourceMappingURL=car.js.map
+//# sourceMappingURL=cat.js.map
