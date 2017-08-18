@@ -15,11 +15,11 @@ import * as io from "socket.io-client";
 })
 export class CarsComponent implements OnInit {
 
-  car = {};
+  car = {};                                              //定义变量
   cars = [];
   isLoading = true;
   isEditing = false;
-  socket = io('http://localhost:4000');
+  socket = io('http://localhost:4000');                  //链接到meanjs服务器
 
   addCarForm: FormGroup;
   sendCarForm:FormGroup;
@@ -38,7 +38,7 @@ export class CarsComponent implements OnInit {
       traffic: this.traffic,
     });
     
-    this.socket.on('new-message', function (data) {
+    this.socket.on('new-message', function (data) {      //socket.io接收消息
       console.log(data);
       var msg : string = data.toString();
       var na : string = msg.split(':')[0];
@@ -61,7 +61,7 @@ export class CarsComponent implements OnInit {
     );
   }
 
-  addCar() {
+  addCar() {                                                //向meanjs发送接收小车信息
     this.carService.addCar(this.addCarForm.value).subscribe(
       res => {
         const newCar = res.json();
