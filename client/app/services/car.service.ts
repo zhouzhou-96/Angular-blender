@@ -24,7 +24,7 @@ export class CarService {
     return this.http.post('/api/car', JSON.stringify(car), this.options);
   }
 
-  sendCar(car): Observable<any> {
+  sendCar(car): Observable<any> {                              //给服务器发送添加小车的信息
     return this.http.post('http://localhost:2000/api/tk1/addcar', JSON.stringify(car), this.options);
   }
 
